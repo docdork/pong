@@ -1,0 +1,66 @@
+@import url("https://fonts.cdnfonts.com/css/retro-computer");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.paddle {
+  --position: 50;
+
+  position: absolute;
+  background-color: white;
+  top: calc(var(--position) * 1vh);
+  transform: translateY(-50%);
+  width: 1vh;
+  height: 10vh;
+}
+
+.paddle.left {
+  left: 1vw;
+}
+
+.paddle.right {
+  right: 1vw;
+}
+
+.score {
+  font-family: "Retro Computer", sans-serif;
+  color: white;
+  font-size: 7vh;
+  display: flex;
+  justify-content: center;
+
+}
+
+.score > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 2vh;
+    margin: 1vh 0;
+}
+
+.score > :first-child{
+    text-align: right;
+    border-right: .5vh dotted white;
+}
+
+.ball {
+  --x: 50;
+  --y: 50;
+
+  position: absolute;
+  background-color: white;
+  left: calc(var(--x) * 1vw);
+  top: calc(var(--y) * 1vh);
+  transform: translateY(-50%, -50%);
+  width: 2.5vh;
+  height: 2.5vh;
+}
