@@ -64,3 +64,12 @@ body {
   width: 2.5vh;
   height: 2.5vh;
 }
+
+button{
+  font-family: "Retro Computer", sans-serif;
+  position: absolute;
+  font-size: 3vh;
+  margin: 20px;
+  right: 1vw;
+  bottom: 1vw;
+}
