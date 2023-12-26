@@ -12,7 +12,7 @@ let lastTime;
 function update(time) {
   if (lastTime != null) {
     const delta = time - lastTime;
-    // ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
+    ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
     computerPaddle.update(delta, ball.y);
     // playerPaddle.update(delta, ball.y);
 
