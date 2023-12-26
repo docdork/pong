@@ -12,8 +12,10 @@ let lastTime;
 function update(time) {
   if (lastTime != null) {
     const delta = time - lastTime;
-    ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
+    // ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
     computerPaddle.update(delta, ball.y);
+    // playerPaddle.update(delta, ball.y);
+
     if (isLose()) handleLose();
   }
 
@@ -37,8 +39,18 @@ function handleLose() {
   computerPaddle.reset();
 }
 
+document.addEventListener("touchmove", (e) => {
+  playerPaddle.position = (e.targetTouches[0].clientY / window.innerHeight * 100) ;
+  console.log(e.targetTouches[0].clientY);
+  // console.log(e);
+  console.log("Player Paddle y = "+playerPaddle.position)
+});
+
 document.addEventListener("mousemove", (e) => {
   playerPaddle.position = (e.y / window.innerHeight) * 100;
+  console.log(e )
+  console.log("Player Paddle y = "+playerPaddle.position)
 });
+
 
 window.requestAnimationFrame(update);
